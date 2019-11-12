@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect, useState} from "react";
+import Header from "./components/header/header";
+import MainContainer from "./components/Main Container/main-container";
+import EmployeeCard from "./components/employee card/employee-card";
+
+import "./App.css";
+
+const 
+
+useEffect( async() =>{
+ getEmployees();
+}, []);
+
+const getEmployees = async ()=> {
+  const response = await fetch(`https://randomuser.me/api/?results=200&nat=us`);
+}
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <MainContainer>
+        <EmployeeCard name={results.name.first} phone={results.phone} email={results.email} gender={results.gender} dob={results.dob.date} />
+      </MainContainer>
     </div>
   );
 }
