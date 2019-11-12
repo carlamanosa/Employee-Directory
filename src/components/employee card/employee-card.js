@@ -1,28 +1,28 @@
 import React from "react";
 import "./employee-card.css";
 
-function EmployeeCard({name, phone, email, gender, dob}) {
+function EmployeeCard({name,phone,email,gender,dob}) {
     return (
         <div className="card">
       <div className="img-container">
-        <img alt="" src="" />
+        <img alt="" src={image} />
       </div>
       <div className="content">
         <ul>
           <li>
-            <strong>Name:</strong> {name}
+            {name}
           </li>
           <li>
-            <strong>Phone:</strong> {phone}
+            {phone}
           </li>
           <li>
-            <strong>Email:</strong> {email}
+            {email}
           </li>
           <li>
-            <strong>Gender:</strong> {gender}
+            {gender}
           </li>
           <li>
-            <strong>DOB:</strong> {dob}
+            {dob}
           </li>
         </ul>
       </div>

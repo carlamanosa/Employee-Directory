@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Header />
       <MainContainer>
-        <EmployeeCard name={results.name.first} phone={results.phone} email={results.email} gender={results.gender} dob={results.dob.date} />
+        <EmployeeCard name={results.name.first} phone={results.phone} email={results.email} gender={results.gender} dob={results.dob.date} image={results.picture.medium} />
       </MainContainer>
     </div>
   );
