@@ -1,7 +1,20 @@
 import React from "react";
 import "./employee-card.css";
 
+
 function EmployeeCard({name,phone,email,gender,dob}) {
+
+  
+
+  componentDidMount() {
+    API.getUsers().then(results => {
+      this.setState({
+        users: results.data.results,
+        filteredUsers: results.data.results
+      });
+    });
+  
+ 
     return (
         <div className="card">
       <div className="img-container">
@@ -28,7 +41,7 @@ function EmployeeCard({name,phone,email,gender,dob}) {
       </div>
     </div>
     );
-  }
+  };
 
 
 
