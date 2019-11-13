@@ -2,40 +2,22 @@ import React from "react";
 import "./employee-card.css";
 
 
-function EmployeeCard({name,phone,email,gender,dob}) {
-
-  
-
-  componentDidMount() {
-    API.getUsers().then(results => {
-      this.setState({
-        users: results.data.results,
-        filteredUsers: results.data.results
-      });
-    });
-  
- 
+function EmployeeCard(props) {
     return (
         <div className="card">
-      <div className="img-container">
-        <img alt="" src={image} />
-      </div>
       <div className="content">
         <ul>
           <li>
-            {name}
+          <strong>Name:</strong> {props.name}
           </li>
           <li>
-            {phone}
+          <strong>ID:</strong> {props.id}
           </li>
           <li>
-            {email}
+          <strong>Company:</strong> {props.company}
           </li>
           <li>
-            {gender}
-          </li>
-          <li>
-            {dob}
+          <strong>Email:</strong> {props.email}
           </li>
         </ul>
       </div>
