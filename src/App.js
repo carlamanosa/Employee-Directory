@@ -1,43 +1,42 @@
 import React, { Component } from "react";
-import Header from "./components/header/header";
-import Wrapper from ".components/Wrapper/Wrapper";
-import EmployeeCard from "./components/employee card/employee-card";
-import employees from "./components/employees.json";
-
-
-import "./App.css";
-
+import EmployeeCard from "./components/EmployeeCard";
+import Wrapper from "./components/Wrapper";
+import Jumbotron from "./components/Jumbotron";
+import employees from "./employees.json";
 
 class App extends Component {
+  // Setting this.state.friends to the friends json array
   state = {
     employees
-  }
+  };
 
-  removeEmployee = id =>{
-
-    const employees = this.state.employees.filter(employee => employee.id !== id );
-
+  removeEmployee = id => {
+    // Filter this.state.friends for friends with an id not equal to the id being removed
+    const employees = this.state.employees.filter(employee => employee.id !== id);
+    // Set this.state.friends equal to the new friends array
     this.setState({ employees });
   };
 
+  // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
-    <div className="App">
+      <div class="app">
+      <Jumbotron/>
       <Wrapper>
-      <Header />
-      {this.state.employees.map(employee => (
-        <EmployeeCard 
-          removeEmployee={this.removeEmployee}
-          name={name.id}
-          id={employee.id}
-          company={employee.company}
-          email={employee.email}
+        {this.state.employees.map(employee => (
+          <EmployeeCard
+            removeEmployee={this.removeEmployee}
+            id={employee.id}
+            key={employee.id}
+            name={employee.name}
+            company={employee.company}
+            email={employee.email}
           />
-      ))}
+        ))}
       </Wrapper>
-    </div>
-  );
-}
+      </div>
+    );
+  }
 }
 
 export default App;
