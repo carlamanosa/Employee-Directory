@@ -1,21 +1,6 @@
 .filterbar {
     text-align: center;
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
 }
 
-#Name {
-    width: 25%;
-}
-
-#ID {
-    width: 25%;
-}
-
-#Company {
-    width: 25%;
-}
-
-#Email {
-    width: 25%;
-}
